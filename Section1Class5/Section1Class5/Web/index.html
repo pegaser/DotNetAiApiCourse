@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Soporte IA</title>
+</head>
+<body>
+    <h1>Soporte IA</h1>
+    <button onclick="checkStatus()">Verificar estado del servicio</button>
+    <p id="result"></p>
+
+    <script>
+async function checkStatus() {
+            const response = await fetch('/api/support/status');
+            const data = await response.json();
+            document.getElementById('result').innerText = data.message;
+        }</script>
+</body>
+</html>
